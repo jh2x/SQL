@@ -1,0 +1,12 @@
+--Create a list of favorite books database
+
+CREATE TABLE books (id integer primary key, name TEXT, rating NUMERIC);
+
+INSERT INTO books VALUES
+(1, 'Biochem', 3),
+(2,  'Art', 2),
+(3, 'History', 1);
+
+--display the database ordered by rating
+SELECT * FROM books
+ORDER BY rating;
