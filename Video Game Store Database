@@ -1,0 +1,42 @@
+--Create video game store database
+
+CREATE TABLE videogames (id INTEGER PRIMARY KEY, title TEXT, release_year INTEGER, price INTEGER, audience_rating TEXT, quantity INTEGER);
+
+INSERT INTO videogames VALUES
+(1, 'Apex_Legends', 2019, 5.00, 'Mature', 5),
+(2, 'Overwatch', 2016, 30.00, 'All', 3),
+(3, 'Minecraft', 2010, 10.00, 'All', 2),
+(4, 'Among_us', 2021, 2.00, 'Mature', 1),
+(5, 'Paladins', 2017, 5.00, 'All', 15),
+(6, 'Halo', 2008, 3.00, 'Mature', 4),
+(7, 'Fortnite', 2018, 9.00, 'All', 20),
+(8, 'God_of_war', 2010, 5.00, 'All', 2),
+(9, 'Mass_effect', 2011, 6.00, 'All', 7),
+(10, 'Rock_band', 2009, 3.00, 'All', 1),
+(11, 'MLB_10', 2012, 15.00, 'All', 2),
+(12, 'The_Sims', 2012, 1.00, 'All', 1),
+(13, 'Risen', 2015, 2.00, 'Mature', 5), 
+(14, 'Rayman', 2019, 8.00, 'All', 2),
+(15, 'Street_fighter_IV', 2017, 12.00, 'Mature', 5)
+;
+
+--Display the database ordered by price
+
+SELECT * FROM videogames 
+ORDER BY price;
+
+--What is the average game price for titles rated "Mature"? 
+
+SELECT AVG(price) "avg game price"
+FROM videogames
+WHERE audience_rating = 'Mature'
+;
+
+--Which three titles have the highest in stock quantity?
+
+SELECT title, release_year, price, quantity 
+FROM videogames
+ORDER BY quantity DESC
+LIMIT 3
+;
+
